@@ -1,0 +1,108 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.body{
+    display: flex;
+    height: 880px;
+}
+.left, .right{
+    width: 50%;
+}
+.left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.webapp{
+    font-family: 'hehe', sans-serif;
+    font-size: 7.5rem;
+    font-weight: 0;
+    letter-spacing: 5px;
+    text-shadow: -2px 2px 0px rgb(255, 255, 255);
+    color: #335437;
+}
+.desc{
+    position: relative;
+    color: #000000;
+    font-size: 18px;
+    left: 3%;
+}
+.carousel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: auto;
+    height: 860px;
+}
+.card {
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transition: transform .4s ease;
+    cursor: pointer;
+}
+.carousel {
+    margin-top: 10%;
+    width: 100%;
+    max-width: 800px;
+    max-height: 600px;
+    height: 100%;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+.cards {
+    position: relative;
+    width: 87%;
+    height: 87%;
+    margin-bottom: 20px;
+}
+.carousel img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    justify-content: center;
+    align-items: center;
+}
+input[type="radio"]{
+    position: relative;
+    z-index: 2;
+    left: 53%;
+    top: 40%;
+    opacity: 20%;
+    transition: 0.3s;
+    background-color: #ecc69b;
+}
+input[type="radio"]:checked{
+    opacity: 80%;
+    accent-color: #ecc69b;
+    border: 1px #ecc69b solid;
+}
+#item-1:checked ~ .cards #pic3, #item-2:checked ~ .cards #pic1, #item-3:checked ~ .cards #pic2 {
+    transform: translatex(-30%) scale(.8);
+    opacity: .4;
+    z-index: 0;
+}
+#item-1:checked ~ .cards #pic2, #item-2:checked ~ .cards #pic3, #item-3:checked ~ .cards #pic1 {
+    transform: translatex(50%) scale(.8);
+    opacity: .4;
+    z-index: 0;
+}
+#item-1:checked ~ .cards #pic1, #item-2:checked ~ .cards #pic2, #item-3:checked ~ .cards #pic3 {
+    transform: translatex(0) scale(1);
+    opacity: 1;
+    z-index: 1;
+    img{
+        height: 500px;
+        width: 500px;
+      box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47);
+    }
+}

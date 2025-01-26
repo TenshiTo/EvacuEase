@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/Mapstyle.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/Body-Header.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+</head>
+<body> 
+    <header>
+        <img src="css/Stock/lagro.png" alt="lagro-logo" id="logo" width="70px" height="70px">
+        <h3>Lagro High School</h3>
+        <nav>
+            <ul class="nav">
+                <li><a href="Map.html" id="M">Map</a></li>
+                <li><a href="About.html" id="A">About</a></li>
+                <li><a href="Contact.html" id="C">Contact Us</a></li>
+            </ul>
+        </nav>
+        <a class="log" href=""><button>Log-in</button></a>
+    </header>
+    <div class="body">
+        <div class="locations">
+            <span>Evacuation Centers</span>
+            <button onclick="goToMarker(0)">Lagro High School</button>
+            <button onclick="goToMarker(1)">Centinnial Park</button>
+        </div>
+      <div id="map"></div>
+    </div>
+    <script src="functions/Map.js"></script>
+</body>
+</html>
