@@ -1,0 +1,11 @@
+body {
+    background-image: url("img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    overflow-y: auto;
+    backdrop-filter: blur(3.4px);
+}
+
+.login-container{
+    background: white;
+}
