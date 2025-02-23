@@ -130,7 +130,7 @@ input[type="text"]{
         flex-direction: column;
     }
     .left h1{
-        font-size: 5rem;
+        font-size: 4rem;
     }
     .left, .right{
         width: 100%;
