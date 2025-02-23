@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1">
+    <title>EvacuEase</title>
+    <link rel="stylesheet" href="styles/head.css">
+    <link rel="stylesheet" href="styles/main_styles/startupPage.css">
+    <link rel="stylesheet" href="styles/fonts.css">
+    <script src="functions/sidebar.js"></script>
+    <script src="functions/Map.js"></script>
+    <script src="functions/carousel.js"></script>
+</head>
+<body>
+    <header>
+        <img src="styles/main_styles/img/logo.png" alt="lagro-logo" id="logo" width="70px" height="70px">
+        <h3>Lagro High School</h3>
+        <nav>
+            <ul class="sidebar">
+                <li class="x"><a onclick="hideSideBar()" ><img src="styles/main_styles/img/icons/close.png" alt="" height="30" width="30"></a></li>
+                <li class="sides"><a href="Map.html" id="M">MAP</a></li>
+                <li class="sides"><a href="About.html" id="A">ABOUT</a></li>
+                <li class="sides"><a href="Contact.html" id="C">CONTACT US</a></li>
+                <li class="logbox"><a class="log" href="user.html"><button>LOG - IN</button></a></li>
+            </ul>
+            <ul class="nav">
+                <span class="main_navs">
+                <li class="vis"><a href="Map.html" id="M">MAP</a></li>
+                <li class="vis"><a href="About.html" id="A">ABOUT</a></li>
+                <li class="vis"><a href="Contact.html" id="C">CONTACT US</a></li>
+                <li class=""><a class="log" href="user.html"><button>LOG - IN</button></a></li></span>
+                <li id="menu"><a onclick="showSideBar()"><img src="styles/main_styles/img/icons/menu.png" alt="" height="40" width="40"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="body">
+        <div class="left">
+            <div class="intro">
+                <h3 class="webapp">EvacuEase</h3>
+                <p class="desc">Setting up an evacuation center shouldn’t be as tough as disasters.<br>
+                    Let’s make disaster response smoother and safer with EvacuEase!</p>
+            </div>
+        </div>
+        <div class="right">
+            <div class="carousel">
+                <input type="radio" name="selector" id="item-1" checked>
+                <input type="radio" name="selector" id="item-2">
+                <input type="radio" name="selector" id="item-3">
+        
+                <div class="card">
+                    <label for="item-1" id="pic1">
+                        <img src="styles/main_styles/img/slider/reabg.jpg" alt="">
+                    </label>
+                    <label for="item-2" id="pic2">
+                        <img src="styles/main_styles/img/slider/bgg.png" alt="">
+                    </label>
+                    <label for="item-3" id="pic3">
+                        <img src="styles/main_styles/img/slider/bfg.jpg" alt="">
+                    </label>
+                </div>
+            </div>        
+        </div>
+    </div>
+</body>
+</html>
