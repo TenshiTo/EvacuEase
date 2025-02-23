@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/main_styles/home.css">
+    <link rel="stylesheet" href="styles/fonts.css">
+    <script src="functions/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="styles/css/bootstrap.css">
+    <script src="functions/session" defer></script>
+    <script src="functions/JsBarcode.all.min.js"></script>
+    <script src="functions/qz-tray.js"></script>
+</head>
+
+<body>
+    <nav>
+        <span class="head">
+            <div id="burger" onclick="toggleSidebar()"><img
+                    src="styles/main_styles/img/icons/burger-menu-svgrepo-com.svg" alt="" height="50px" width="50px">
+            </div>
+            <span>EvacuEase</span>
+        </span>
+        <ul>
+            <li><a href="" id="M" class="disabled">Home</a></li>
+        </ul>
+    </nav>
+    <div class="body">
+        <div class="sidebar">
+            <ul>
+                <li><a href="form-page.html">FORM</a></li>
+                <li><a onclick="showMsg()">DATA</a></li>
+                <li><a onclick="Logout()" id="out">Log-out</a></li>
+            </ul>
+        </div>
+        <div class="form">
+            <div class="left">
+            <div class="content_left">
+                <span>Welcome to</span>
+                <span>EvacuEase</span>
+            </div>
+        </div>
+        <div class="right">
+            <div class="content_right">
+                <h1>Emergency Hotlines</h1>
+                <ul class="contacts"><br>
+                    <li>QC Helpline: 122</li><br>
+                    <li>Emergency Operations Center:</li>
+                    <li>• 8988-4242 local 8038</li>
+                    <li>• 0947-885-9929</li>
+                    <li>• 0947-884-7498</li>
+                    <li>• 8988 4242</li><br>
+                    <li>Emergency Medical Services/ Urban Search and Rescue:</li>
+                    <li>• 8928 4396</li>
+                    <li>• 0947-884-7498</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="screen-warning">
+        <p>Please do not resize the window.</p>
+    </div>
+</body>
+<script>
+    function toggleSidebar() {
+    var sidebar = document.querySelector(".sidebar"); // Get the sidebar element
+    if (sidebar.style.marginLeft === "-19%") {
+        sidebar.style.marginLeft = "-1%";
+    } else {
+        sidebar.style.marginLeft = "-19%";
+    }
+    
+}
+
+    //FOR THE WARNINGGGG
+    document.addEventListener("DOMContentLoaded", function () {
+        let initialWidth = window.innerWidth;
+        let initialHeight = window.innerHeight;
+        let warning = document.querySelector(".screen-warning");
+        warning.style.display = "none";
+        function checkScaling() {
+            let currentWidth = window.innerWidth;
+            let currentHeight = window.innerHeight;
+
+            if (currentWidth !== initialWidth || currentHeight !== initialHeight) {
+                warning.style.display = "flex"; // Show warning
+            } else {
+                warning.style.display = "none"; // Hide warning
+            }
+        }
+
+        window.addEventListener("resize", checkScaling);
+    });
+
+    function showMsg(){
+        alert("No Data Stored in the Database")
+    }
+    function Logout() {
+        sessionStorage.clear();
+        localStorage.clear();  
+        window.location.href = "head.html";
+        window.onpopstate = function(event) {
+            history.go(1);
+        };
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+        // Function to check if the device is mobile or non-desktop
+        function checkDevice() {
+            let isMobile = /Mobi|Android/i.test(navigator.userAgent); // Detect mobile devices
+            
+            if (isMobile) {
+                // If it's a mobile device, show the warning message
+                let warningMessage = document.createElement('div');
+                warningMessage.style.position = 'fixed';
+                warningMessage.style.top = '0';
+                warningMessage.style.left = '0';
+                warningMessage.style.width = '100%';
+                warningMessage.style.backgroundColor = 'red';
+                warningMessage.style.color = 'white';
+                warningMessage.style.textAlign = 'center';
+                warningMessage.style.padding = '10px';
+                warningMessage.style.fontSize = '18px';
+                warningMessage.innerText = 'This page cannot be accessed on mobile devices. Please use a desktop.';
+                
+                document.body.appendChild(warningMessage);
+            }
+        }
+    
+        // Call the checkDevice function on page load
+        checkDevice();
+    });
+    
+</script>
+</html>

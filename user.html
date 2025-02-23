@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log-in Page</title>
+    <link rel="stylesheet" href="styles/head.css">
+    <link rel="stylesheet" href="styles/fonts.css">
+    <link rel="stylesheet" href="styles/main_styles/userLogin.css">
+</head>
+
+<body>
+    <header>
+        <a href="head.html" style="cursor: pointer;"><img src="styles/main_styles/img/logo.png" alt="lagro-logo" id="logo" width="70px" height="70px"></a>
+        <h3>Lagro High School</h3>
+        <nav>
+            <ul class="sidebar">
+                <li class="x"><a onclick="hideSideBar()"><img src="styles/main_styles/img/icons/close.png" alt="" height="30" width="30"></a></li>
+                <li class="sides"><a href="Map.html" id="M">MAP</a></li>
+                <li class="sides"><a href="About.html" id="A">ABOUT</a></li>
+                <li class="sides"><a href="Contact.html" id="C">CONTACT US</a></li>
+            </ul>
+            <ul class="nav">
+                <span class="main_navs">
+                    <li class="vis"><a href="Map.html" id="M">MAP</a></li>
+                    <li class="vis"><a href="About.html" id="A">ABOUT</a></li>
+                    <li class="vis"><a href="Contact.html" id="C">CONTACT US</a></li>
+                </span>
+                <li id="menu"><a onclick="showSideBar()"><img src="styles/main_styles/img/icons/menu.png" alt="" height="40" width="40"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="body">
+        <div class="login-container">
+            <h2>INFORMATION</h2>
+            <div class="form">
+                <label for="Username">USERNAME</label><br>
+                <input type="text" id="Username" name="Username" placeholder="USERNAME" required><br>
+                <label for="pass">PASSWORD</label><br>
+                <input type="password" id="pass" name="pass" placeholder="PASSWORD" required><br>
+                <div class="button-container">
+                    <input type="submit" value="LOG IN" onclick="validate()">
+                    <a href="#" class="supp-link">Contact Support</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function validate() {
+            let user = document.getElementById('Username').value;
+            let pass = document.getElementById('pass').value;
+
+            if (user === 'root' && pass === 'haha') {
+                window.location.href = "home.html";
+                return true; // Allow form submission and redirection
+            } else {
+                alert("Incorrect Credentials");
+                return false; // Keep the form from submitting
+            }
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+            // Function to check if the device is mobile or non-desktop
+            function checkDevice() {
+                let isMobile = /Mobi|Android/i.test(navigator.userAgent); // Detect mobile devices
+                
+                if (isMobile) {
+                    // If it's a mobile device, show the warning message
+                    let warningMessage = document.createElement('div');
+                    warningMessage.style.position = 'fixed';
+                    warningMessage.style.top = '0';
+                    warningMessage.style.left = '0';
+                    warningMessage.style.width = '100%';
+                    warningMessage.style.backgroundColor = 'red';
+                    warningMessage.style.color = 'white';
+                    warningMessage.style.textAlign = 'center';
+                    warningMessage.style.padding = '10px';
+                    warningMessage.style.fontSize = '18px';
+                    warningMessage.innerText = 'This page cannot be accessed on mobile devices. Please use a desktop.';
+                    
+                    document.body.appendChild(warningMessage);
+                }
+            }
+        
+            // Call the checkDevice function on page load
+            checkDevice();
+        });
+        
+    </script>
+</body>
+
+</html>

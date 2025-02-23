@@ -1,0 +1,103 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/head.css">
+    <link rel="stylesheet" href="styles/fonts.css">
+    <link rel="stylesheet" href="styles/main_styles/Aboutstyle.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="functions/prof_Function.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="head.html" style="cursor: pointer;"><img src="styles/main_styles/img/logo.png" alt="lagro-logo" id="logo" width="70px" height="70px"></a>
+        <h3>Lagro High School</h3>
+        <nav>
+            <ul class="sidebar">
+                <li class="x"><a onclick="hideSideBar()"><img src="styles/main_styles/img/icons/close.png" alt=""
+                            height="30" width="30"></a></li>
+                <li class="sides"><a href="Map.html" id="M">MAP</a></li>
+                <li class="sides"><a href="About.html" id="A">ABOUT</a></li>
+                <li class="sides"><a href="Contact.html" id="C">CONTACT US</a></li>
+                <li class="logbox"><a class="log" href="user.html"><button>LOG - IN</button></a></li>
+            </ul>
+            <ul class="nav">
+                <span class="main_navs">
+                    <li class="vis"><a href="Map.html" id="M">MAP</a></li>
+                    <li class="vis"><a href="About.html" id="A">ABOUT</a></li>
+                    <li class="vis"><a href="Contact.html" id="C">CONTACT US</a></li>
+                    <li class=""><a class="log" href="user.html"><button>LOG - IN</button></a></li>
+                </span>
+                <li id="menu"><a onclick="showSideBar()"><img src="styles/main_styles/img/icons/menu.png" alt=""
+                            height="40" width="40"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="body">
+        <div class="content">
+            <div class="aboutus">
+                <img src="styles/main_styles/img/icons/Who.png" width="100px" height="100px">
+                <h4>About us</h4>
+            </div>
+            <p><span>EvacuEase</span> is a web application that helps monitor occupancy and prevent overcrowding. The
+                <span>EvacuEase</span> system collects data such as name, age, and gender. We also ask how many people
+                are in a family going to the evacuation center or if they are going without someone. This data is
+                required so that we can list in and monitor occupancy in the evacuation center.</p>
+            
+            <h3 id="team">TEAM</h3>
+            <div class="minW">
+            <div class="profile">
+                <button id="prevBtn" onclick="changeDecChild()">&#10094;</button>
+                <div class="pro1">
+                    <img src="styles/main_styles/img/team_profiles/male.png" alt="" width="200vw" height="200vh">
+                    <h4>Angelo Male<br>
+                        <span>Project Manager</span>
+                    </h4>
+                </div>
+                <div class="pro1">
+                    <img src="styles/main_styles/img/team_profiles/iyan.jpg" alt="" width="200px" height="200px">
+                    <h4>Iyan Miguel Bebar<br>
+                        <span>Programmer</span>
+                    </h4>
+                </div>
+                <div class="pro1">
+                    <img src="styles/main_styles/img/team_profiles/hanna.jpg" alt="" width="200px" height="200px">
+                    <h4>Hanna Raiza Mukaddis<br>
+                        <span>Debugger</span>
+                    </h4>
+                </div>
+                <div class="pro1">
+                    <img src="styles/main_styles/img/team_profiles/norie.jpg" alt="" width="200px" height="200px">
+                    <h4>Norie Ann Timbal<br>
+                        <span>System Analyst</span>
+                    </h4>
+                </div>
+                <div class="pro1">
+                    <img src="styles/main_styles/img/team_profiles/norie.jpg" alt="" width="200px" height="200px">
+                    <h4>Scott Ahron Ortil<br>
+                        <span>Researcher</span>
+                    </h4>
+                </div>
+                <div class="pro1">
+                    <img src="styles/main_styles/img/team_profiles/mica.jpg" alt="" width="200px" height="200px">
+                    <h4>Mieya Cashieka Nipal<br>
+                        <span>Researcher</span>
+                    </h4>
+                </div>
+            
+                <button id="nextBtn" onclick="changeIncChild()">&#10095;</button></div>
+            </div>
+            <div class="profileSlider">
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

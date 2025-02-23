@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/main_styles/form-evac.css">
+    <link rel="stylesheet" href="styles/fonts.css">
+    <script src="functions/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="styles/css/bootstrap.css">
+    <script src="functions/in-sidebar.js" defer></script>
+    <script src="functions/session" defer></script>
+    <script src="functions/JsBarcode.all.min.js"></script>
+    <script src="functions/qz-tray.js"></script>
+</head>
+
+<body>
+    <nav>
+        <span class="head">
+            <div id="burger" onclick="toggleSidebar()"><img
+                    src="styles/main_styles/img/icons/burger-menu-svgrepo-com.svg" alt="" height="50px" width="50px">
+            </div>
+            <span>EvacuEase</span>
+        </span>
+        <ul>
+            <li><a href="" id="M" class="disabled">Log-Out</a></li>
+        </ul>
+    </nav>
+    <div class="body">
+        <div class="sidebar">
+            <ul>
+                <li><a href="form.html" class="disabled">FORM</a></li>
+                <li><a onclick="showMsg()">DATA</a></li>
+                <li><a onclick="Logout()" id="out">Log-out</a></li>
+            </ul>
+        </div>
+        <div class="form">
+            <form action="form.php" method="POST">
+                <div class="inputs">
+                    <input type="hidden" id="barcodeInput" name="barcodeInput">
+                    <label for="Name">NAME</label>
+                    <input type="text" id="Name" name="Name" required>
+
+                    <label for="Age">AGE</label>
+                    <input type="number" id="Age" name="Age" required>
+
+                    <label for="Address">ADDRESS</label>
+                    <input type="text" id="Address" name="Address" required>
+
+                    <label>Gender</label>
+                    <span class="radios">
+                        <input type="radio" id="male" class="gender" name="gender" value="Male">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" class="gender" name="gender" value="Female">
+                        <label for="female">Female</label>
+                    </span>
+
+                    <label for="ContactNumber">CONTACT NUMBER</label>
+                    <input type="number" id="ContactNumber" name="ContactNumber" required>
+
+                    <label for="Time-in">TIME-IN</label>
+                    <input type="time" id="Time-in" name="Time-in" required>
+                </div>
+                <div class="barcode">
+                    <span id="barcode">
+                        <img id="barcodeImage">
+                    </span>
+                    <span class="RN">
+                        <label for="RNUMBER">ROOM NUMBER</label><br>
+                        <input type="text" id="RNUMBER" name="RNUMBER" required>
+                    </span>
+                    <div class="buttons">
+                        <button type="submit" disabled>SUBMIT</button>
+                    </div>
+            </form>
+
+        </div>
+    </div>
+    <div class="screen-warning">
+        <p>Please do not resize the window.</p>
+    </div>
+</body>
+<script>
+    //BARCODEE GENERATOR
+    document.addEventListener("DOMContentLoaded", function () {
+        // Generate a random 10-digit barcode number
+        let randomBarcode = Math.floor(1000000000 + Math.random() * 9000000000);
+
+        // Assign barcode value to the hidden input field
+        let barcodeInput = document.getElementById("barcodeInput");
+        barcodeInput.value = randomBarcode; // This is the key step!
+
+        // Generate barcode on a canvas
+        let canvas = document.createElement("canvas");
+        JsBarcode(canvas, randomBarcode.toString(), {
+            format: "CODE128",
+            displayValue: false,
+            width: 3,
+            height: 80
+        });
+
+        // Convert canvas to image
+        let barcodeImage = new Image();
+        barcodeImage.src = canvas.toDataURL("image/png");
+        barcodeImage.style.width = "100%";
+        barcodeImage.style.height = "80%";
+
+        // Create a div for barcode number
+        let barcodeText = document.createElement("div");
+        barcodeText.textContent = randomBarcode;
+        barcodeText.style.width = "100%";
+        barcodeText.style.textAlign = "center";
+        barcodeText.style.fontSize = "25px";
+        barcodeText.style.fontWeight = "bold";
+        barcodeText.style.paddingTop = "5px";
+
+        // Insert the barcode image and text into the barcode container
+        let barcodeContainer = document.getElementById("barcode");
+        barcodeContainer.innerHTML = "";
+        barcodeContainer.appendChild(barcodeImage);
+        barcodeContainer.appendChild(barcodeText);
+        document.querySelector("#barcodeInput").value = randomBarcode;
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        let randomBarcode = Math.floor(1000000000 + Math.random() * 9000000000);
+        let barcodeInput = document.getElementById("barcodeInput");
+        barcodeInput.value = randomBarcode;
+
+        let canvas = document.createElement("canvas");
+        JsBarcode(canvas, randomBarcode.toString(), {
+            format: "CODE128",
+            displayValue: false,
+            width: 3,
+            height: 80
+        });
+
+        let barcodeImage = new Image();
+        barcodeImage.src = canvas.toDataURL("image/png");
+        barcodeImage.style.width = "100%";
+        barcodeImage.style.height = "80%";
+
+        let barcodeText = document.createElement("div");
+        barcodeText.textContent = randomBarcode;
+        barcodeText.style.textAlign = "center";
+        barcodeText.style.fontSize = "25px";
+        barcodeText.style.fontWeight = "bold";
+        barcodeText.style.paddingTop = "5px";
+
+        let barcodeContainer = document.getElementById("barcode");
+        barcodeContainer.innerHTML = "";
+        barcodeContainer.appendChild(barcodeImage);
+        barcodeContainer.appendChild(barcodeText);
+
+        document.querySelector("#barcodeInput").value = randomBarcode;
+    });
+
+    // Auto Print Barcode on Submission
+    document.querySelector("form").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        let barcodeValue = document.getElementById("barcodeInput").value;
+        if (!barcodeValue) {
+            alert("Barcode not generated!");
+            return;
+        }
+
+        printBarcode(barcodeValue);
+    });
+
+    function printBarcode(barcodeValue) {
+        if (!qz.websocket.isActive()) {
+            qz.websocket.connect().then(startPrint).catch((err) => {
+                console.error("QZ Tray Connection Failed:", err);
+                alert("QZ Tray is not running. Please start QZ Tray and try again.");
+                document.querySelector("form").submit();
+            });
+        } else {
+            startPrint();
+        }
+
+        function startPrint() {
+            let config = qz.configs.create("Brother DCP-T520W Printer");
+            let data = [
+                {
+                    type: "image",
+                    format: "base64",
+                    data: document.querySelector("#barcode img").src.split(",")[1]
+                }
+            ];
+
+            qz.print(config, data).then(() => {
+                console.log("Print successful");
+                document.querySelector("form").submit();
+            }).catch((err) => {
+                console.error("Print failed:", err);
+                alert("Printing failed. Submitting form anyway.");
+                document.querySelector("form").submit();
+            });
+        }
+    }
+    qz.security.setCertificatePromise(function (resolve, reject) { resolve(); });
+    qz.security.setSignaturePromise(function (toSign) { return function (resolve, reject) { resolve(); }; });
+
+    //FOR THE WARNINGGGG
+    document.addEventListener("DOMContentLoaded", function () {
+        let initialWidth = window.innerWidth;
+        let initialHeight = window.innerHeight;
+        let warning = document.querySelector(".screen-warning");
+        warning.style.display = "none";
+        function checkScaling() {
+            let currentWidth = window.innerWidth;
+            let currentHeight = window.innerHeight;
+
+            if (currentWidth !== initialWidth || currentHeight !== initialHeight) {
+                warning.style.display = "flex"; // Show warning
+            } else {
+                warning.style.display = "none"; // Hide warning
+            }
+        }
+
+        window.addEventListener("resize", checkScaling);
+    });
+
+    function showMsg(){
+        alert("No Data Stored in the Database")
+    }
+    function Logout(){
+        window.location.href = "head.html";
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+        // Function to check if the device is mobile or non-desktop
+        function checkDevice() {
+            let isMobile = /Mobi|Android/i.test(navigator.userAgent); // Detect mobile devices
+            
+            if (isMobile) {
+                // If it's a mobile device, show the warning message
+                let warningMessage = document.createElement('div');
+                warningMessage.style.position = 'fixed';
+                warningMessage.style.top = '0';
+                warningMessage.style.left = '0';
+                warningMessage.style.width = '100%';
+                warningMessage.style.backgroundColor = 'red';
+                warningMessage.style.color = 'white';
+                warningMessage.style.textAlign = 'center';
+                warningMessage.style.padding = '10px';
+                warningMessage.style.fontSize = '18px';
+                warningMessage.innerText = 'This page cannot be accessed on mobile devices. Please use a desktop.';
+                
+                document.body.appendChild(warningMessage);
+            }
+        }
+    
+        // Call the checkDevice function on page load
+        checkDevice();
+    });
+    
+</script>
+
+</html>

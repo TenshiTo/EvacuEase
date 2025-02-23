@@ -1,0 +1,63 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/main_styles/Mapstyle.css">
+    <link rel="stylesheet" href="styles/fonts.css">
+    <link rel="stylesheet" href="styles/head.css">
+    <link rel="stylesheet" href="leaflet/leaflet.css">
+    <script src="leaflet/leaflet.js"></script>
+    <script src="functions/sidebar.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="head.html" style="cursor: pointer;"><img src="styles/main_styles/img/logo.png" alt="lagro-logo" id="logo" width="70px" height="70px"></a>
+        <h3>Lagro High School</h3>
+        <nav>
+            <ul class="sidebar">
+                <li class="x"><a onclick="hideSideBar()"><img src="styles/main_styles/img/icons/close.png" alt=""
+                            height="30" width="30"></a></li>
+                <li class="sides"><a href="Map.html" id="M">MAP</a></li>
+                <li class="sides"><a href="About.html" id="A">ABOUT</a></li>
+                <li class="sides"><a href="Contact.html" id="C">CONTACT US</a></li>
+                <li class="logbox"><a class="log" href="user.html"><button>LOG - IN</button></a></li>
+            </ul>
+            <ul class="nav">
+                <span class="main_navs">
+                    <li class="vis"><a href="Map.html" id="M">MAP</a></li>
+                    <li class="vis"><a href="About.html" id="A">ABOUT</a></li>
+                    <li class="vis"><a href="Contact.html" id="C">CONTACT US</a></li>
+                    <li class=""><a class="log" href="user.html"><button>LOG - IN</button></a></li>
+                </span>
+                <li id="menu"><a onclick="showSideBar()"><img src="styles/main_styles/img/icons/menu.png" alt=""
+                            height="40" width="40"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="body">
+        <div class="locations">
+            <span>Evacuation Centers</span>
+            <button onclick="goToMarker(0)">Lagro High School</button>
+            <button onclick="goToMarker(1)">Centinnial Park</button>
+        </div>
+        <div class="locations_mobile">
+            <span id="mobile_">Evacuation Centers<a href="#" id="toggleArrow" onclick="toggleLocs()">
+                    <span class="arrow">
+                        ➢
+                    </span>
+                </a></span>
+            <div id="locs">
+                <button id="b1" onclick="goToMarker(0)" style=":hover{background-color:aqua;}">Lagro High School</button>
+                <button id="b2" onclick="goToMarker(1)">Centinnial Park</button>
+            </div>
+        </div>
+        <div id="map"></div>
+
+    </div>
+    <script src="functions/Map.js"></script>
+</body>
+
+</html>
