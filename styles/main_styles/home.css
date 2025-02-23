@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow: hidden;
+}
+
+.body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    gap: 5%;
+}
+
+/* NAVS */
+nav {
+    display: flex;
+    height: 7vh;
+    align-items: center;
+    background-color: #f1ebe5;
+    border-bottom: 2px solid black;
+    justify-content: space-between;
+    padding: 5px 20px;
+    width: 100vw;
+
+    .head {
+        display: flex;
+        gap: 20px;
+    }
+
+    ul {
+        display: flex;
+        list-style: none;
+
+        li {
+            padding: 90px;
+
+            a {
+                text-decoration: none;
+                font-family: 'nav', sans-serif;
+                font-size: 1.5rem;
+                font-weight: 500;
+                text-align: center;
+                color: #415843;
+                padding-bottom: 3px;
+            }
+
+            a:hover {
+                color: #ecc69b;
+                border-bottom: 2.5px solid #f3d5b3;
+            }
+        }
+    }
+
+    span {
+        align-items: center;
+    }
+
+    span span {
+        font-family: 'nav', sans-serif;
+        font-size: 30px;
+        font-weight: 800;
+        color: #415843;
+    }
+}
+#burger:hover{
+    cursor: pointer;
+}
+#M {
+    color: #ecc69b;
+    position: relative;
+    display: inline-block;
+    border-bottom: 2.5px solid #f3d5b3;
+}
+
+#M::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 40px;
+    bottom: -2.5px;
+    /* Align with the border */
+    width: 100%;
+    height: 17px;
+    /* Adjust for shadow height */
+    background: linear-gradient(to bottom, rgba(240, 202, 159, 0.7) 0%, rgba(243, 213, 179, 0) 100%);
+    clip-path: polygon(0% 100%, 20% 0%, 80% 0%, 100% 100%);
+    z-index: 1;
+    /* Push shadow behind the element */
+}
+
+a.disabled {
+    cursor: alias;
+
+}
+
+.sidebar {
+    background-color: #f1ebe5;
+    width: 15%;
+    height: 110vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -19%;
+    transition: margin-left 0.3s ease-in-out;
+
+    /* Smooth animation */
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        padding: 20px;
+        width: 100%;
+    }
+
+    li {
+        list-style: none;
+        text-align: center;
+
+        a {
+            text-decoration: none;
+            font-family: 'nav', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            text-align: center;
+            color: #415843;
+            padding-bottom: 3px;
+        }
+
+        a:hover {
+            color: #ecc69b;
+            border-bottom: 2.5px solid #f3d5b3;
+        }
+    }
+}
+
+/* ACTUAL FORM */
+.form {
+    width: 100%;
+    height: calc(100vh - 7vh); /* Subtract the nav height */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;  /* Center the contents horizontally */
+    align-items: flex-start;  /* Align to the top */
+}
+
+/* body Fields */
+.form .left {
+    width: 50%;
+    height: 100%; /* Make sure it takes up full height */
+    display: flex;                  /* Apply flex to align content */
+    flex-direction: column;         /* Stack elements vertically */
+    justify-content: center;        /* Center content vertically */
+    align-items: center;            /* Center content horizontally */
+    font-family: 'nuni', monospace;
+    position: relative;
+    overflow: hidden;
+}
+
+.left::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../main_styles/img/background.jpg);
+    background-repeat: no-repeat;
+    background-size: 200% 200%;
+    background-position: -650px 0px;
+    filter: blur(3.4px);
+    z-index: -1;
+}
+
+.content_left {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    z-index: 10; /* Keeps it above the blurred background */
+}
+
+.content_left :first-of-type{
+    font-size: 24.9px;
+    font-weight: 700;
+    color: #ffffff;
+    font-style: italic;
+    text-shadow: black 1px 3px 3.5px;
+}
+
+.content_left :nth-of-type(2){
+    font-size: 6.9rem;
+    font-family: 'hehe', sans-serif;
+    font-weight: 800;
+    color: #335437;
+    text-shadow: rgb(255, 255, 255) -1.5px -5.5px 0px;
+}
+
+.form .right {
+    width: 50%;
+    background-color: #335437;
+    justify-items: center;
+    height: 100%;
+    .content_right {
+        margin-top: 4%;
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+        font-family: 'nuni', monospace;
+        color: #ffffff;
+        height: 100%;
+        width: 50%;
+        font-size: 30px;
+        
+    }
+    .content_right li{
+        list-style: none;
+    }
+    h1{
+        font-size: 45.9px;
+    font-weight: 700;
+    color: #ffffff;
+    font-style: italic;
+    }
+}
+
+/* Warning for Screen Scaling */
+.screen-warning {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(0, 0, 0);
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 9999;
+}
+#out:hover{
+    color: rgba(255, 0, 0, 0.514);
+    text-shadow: red 2px 2px 2px;
+    padding: 20px;
+    cursor: pointer;
+}

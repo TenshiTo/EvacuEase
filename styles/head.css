@@ -1,0 +1,111 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+header li, button{
+    list-style: none;
+    all: unset;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 1%;
+    align-items: center;
+    background-color: #f1ebe5;
+    border-bottom: 2px solid black;
+    height: 70px;
+}
+a{
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.4rem;
+    color: black;
+}
+header h3{
+    margin-right: auto;
+    font-family: 'nav', sans-serif;
+    font-size: 25px;
+    color: #415843;
+}
+.vis{
+   padding: 90px;
+}
+.vis a{
+    font-family: 'nav', sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+    color: #415843;
+    padding-bottom: 3px;
+}
+.vis a:hover{
+    color: #ecc69b;
+    border-bottom: 2.5px solid #f3d5b3;
+}
+.log{
+    font-family: 'nav', sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    border: none;
+    border-radius: 60px;
+    background-color: rgb(247, 202, 129);
+    height: 50px;
+    width: 150px;
+    padding: 5px 30px;
+    color: #415843;
+    transition: all ease 0.3s;
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #ffffffa6;
+    backdrop-filter: blur(100px);
+    height: 100%;
+    width: 250px;
+    z-index: 670;
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    
+    .sides{
+        padding: 25px 30px;
+    }
+    .sides a{
+        font-family: 'nav', sans-serif;
+        font-size: 25px;
+        font-weight: 500;
+        text-align: center;
+        color: #415843;
+        padding-bottom: 3px;
+    }
+    .sides a:hover{
+        color: #ecc69b;
+        border-bottom: 2.5px solid #f3d5b3;
+        z-index: 700;
+    }
+    .x{
+        padding: 10px;
+    }
+    .logbox{
+        padding: 25px 30px;
+    }
+}
+#menu{
+    display: none;
+    padding-right: 10px;
+}
+@media only screen and (max-width: 1314px) {
+    .main_navs{
+        display: none;
+    } 
+    #menu{
+        display: flex;
+    }
+    .header{
+        width: 100%;
+    }
+}

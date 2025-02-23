@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'Logo';
+    src: url(./fonts/Reborn.ttf)format('truetype');
+}
+
+@font-face {
+    font-family: 'normfont';
+    src: url(./fonts/CormorantGaramond-Regular.ttf)format('truetype');
+}
+
+@font-face {
+    font-family: 'nav';
+    src: url(./fonts/Century\ Gothic.ttf)format('truetype');
+}
+@font-face{
+    font-family: 'hehe';
+    src: url(./fonts/Bank\ Gothic\ Light\ Regular.otf)format('truetype');
+}
+@font-face {
+    font-family: 'nuni';
+    src: url(./fonts/Nunito-Regular.ttf);
+}

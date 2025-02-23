@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow: hidden;
+}
+.body{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    gap: 5%;
+}
+/* NAVS */
+nav {
+    display: flex;
+    height: 7vh;
+    align-items: center;
+    background-color: #f1ebe5;
+    border-bottom: 2px solid black;
+    justify-content: space-between;
+    padding: 5px 20px;
+    width: 100vw;
+    .head {
+        display: flex;
+        gap: 20px;
+    }
+
+    ul {
+        display: flex;
+        list-style: none;
+
+        li {
+            padding: 90px;
+            a {
+                text-decoration: none;
+                font-family: 'nav', sans-serif;
+                font-size: 1.5rem;
+                font-weight: 500;
+                text-align: center;
+                color: #415843;
+                padding-bottom: 3px;
+            }
+
+            a:hover {
+                color: #ecc69b;
+                border-bottom: 2.5px solid #f3d5b3;
+            }
+        }
+    }
+
+    span {
+        align-items: center;
+    }
+
+    span span {
+        font-family: 'nav', sans-serif;
+        font-size: 30px;
+        font-weight: 800;
+        color: #415843;
+    }
+}
+.sidebar{
+    background-color: #f1ebe5;
+    width: 15%;
+    height: 110vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -1%;
+    transition: margin-left 0.3s ease-in-out; /* Smooth animation */
+    ul{
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        padding: 20px;
+        width: 100%;
+    }
+    li{
+        list-style: none;
+        text-align: center;
+        a{
+            text-decoration: none;
+            font-family: 'nav', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            text-align: center;
+            color: #415843;
+            padding-bottom: 3px;
+        }
+        a:hover {
+            color: #ecc69b;
+            border-bottom: 2.5px solid #f3d5b3;
+        }
+    }
+}
+/* ACTUAL FORM */
+.form {
+    margin-top: 4%;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the barcode */
+}
+
+form {
+    display: flex;
+    flex-direction: row; /* Aligns barcode and inputs side by side */
+    align-items: flex-start; /* Aligns from the top */
+    width: 100%;
+}
+/* Barcode Styling */
+form .barcode {
+    width: 20%;
+    display: flex;
+    justify-content: center; /* Centers barcode horizontally */
+    align-items: center;
+    margin-left: 8%;
+    flex-direction: column;
+}
+
+form .barcode #barcode {
+    width: 200%; /* Adjust as needed */
+    max-width: 500px; /* Ensures barcode doesn't overflow */
+    height: 200px; /* Maintains aspect ratio */
+    border: 1px solid black;
+    margin-bottom: 10%;
+}
+form .barcode .RN {
+    width: 100%;
+    margin-left: -56%;
+}
+
+form .barcode .RN label {
+    font-size: 1.3rem;
+    font-family: 'nuni', sans-serif;
+    font-weight: 600;
+    color: #415843;
+}
+
+form .barcode .RN input[type="text"] {
+    border: #8bab8d solid 1px;
+    width: 200%;
+    max-width: 500px; /* Matches barcode width */
+}
+
+/* Input Fields */
+form .inputs {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+form .radios {
+    margin-top: 10px;
+    display: flex;
+    label{
+    position: relative;
+    top: -9px;
+        left: -13%;
+}
+}
+form .inputs input[type="text"], .inputs input[type="number"], .inputs input[type="time"] {
+    width: 90%;
+    border: #8bab8d solid 1px;
+    padding: 5px;
+}
+
+form .inputs input[type="text"]:focus {
+    outline: #79937b solid 1px;
+}
+
+form .inputs input {
+    border: 1px solid black;
+    width: 70%;
+    height: 20%;
+    margin-bottom: 20px;
+}
+
+form .inputs label {
+    width: 70%;
+    margin-left: 3%;
+    font-size: 1.3rem;
+    font-family: 'nuni', sans-serif;
+    font-weight: 600;
+    color: #415843;
+}
+
+/* Submit Button */
+form .barcode .buttons{
+    margin-top: 65%;
+    margin-left: 115%;
+    button[type="submit"]{
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        padding: 5px 15px;
+        font-size: 15px;
+        width: auto;
+        font-family: 'nav', sans-serif;
+    }
+}
+a.disabled {
+    pointer-events: none;
+    color: gray;
+    text-decoration: none;
+    cursor: default;
+    border-bottom:solid 2px black ;
+    border-width: 100%;
+}
+/* Warning for Screen Scaling */
+.screen-warning {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(0, 0, 0);
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 9999;
+}
+#out:hover{
+    color: rgba(255, 0, 0, 0.514);
+    text-shadow: red 2px 2px 2px;
+    padding: 20px;
+    cursor: pointer;
+}
+#burger:hover{
+    cursor: pointer;
+}

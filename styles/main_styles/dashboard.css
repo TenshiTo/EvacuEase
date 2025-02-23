@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    display: flex;
+    width: 100vw;
+    height: 92.3vh;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.left, .right {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left{
+    font-family: 'nuni', monospace;
+    position: relative;
+    font-family: 'nuni', monospace;
+    overflow: hidden;
+}
+
+.left::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../main_styles/img/background.jpg);
+    background-repeat: no-repeat;
+    background-size: 200% 200%;
+    background-position: -650px 0px;
+    filter: blur(3.4px);
+    z-index: -1;
+}
+
+.content_left {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10; /* Keeps it above the blurred background */
+}
+
+.content_left :first-of-type{
+    font-size: 24.9px;
+    font-weight: 700;
+    color: #ffffff;
+    font-style: italic;
+    text-shadow: black 1px 3px 3.5px;
+    
+}
+.content_left :nth-of-type(2){
+    font-size: 6.9rem;
+    font-family: 'hehe', sans-serif;
+    font-weight: 800;
+    color: #335437;
+    text-shadow: rgb(255, 255, 255) -1.5px -5.5px 0px;
+}
+.right{
+    background-color: #335437;
+}
+.content_right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'nuni', monospace;
+    color: #ffffff;;
+    height: 100%;
+    width: 45%;
+    font-size: 30px;
+}
+.content_right h1{
+    font-size: 45.9px;
+    font-weight: 700;
+    color: #ffffff;
+    font-style: italic;
+    
+    
+}
+.content_right li{
+    list-style: none;
+}
+#sidebar {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #335437;
+    padding-top: 60px;
+    transition: 0.3s;
+}
+
+#sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+#sidebar ul li {
+    padding: 15px;
+    text-align: center;
+}
+
+#sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+#burger {
+    position: fixed;
+    top: 5px;
+    left: 15px;
+    width: 50;
+    font-size: 30px;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 5px;
+}

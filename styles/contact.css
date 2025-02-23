@@ -1,0 +1,120 @@
+.body{
+    display: flex;
+    height: 91.9vh;
+}
+#C {
+    color: #ecc69b;
+    position: relative;
+    display: inline-block;
+    border-bottom: 2.5px solid #f3d5b3;
+}
+#C::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 35px;
+    bottom: -2.5px;
+    width: 100%;
+    height: 17px;
+    background: linear-gradient(to bottom, rgba(240, 202, 159, 0.7) 0%, rgba(243, 213, 179, 0) 100%);    
+    clip-path: polygon(0% 100%, 20% 0%, 80% 0%, 100% 100%);
+    z-index: 1;
+}
+.left, .right{
+    width: 50%;
+}
+.right{
+    background-color: white;
+}
+.left{
+    background-color: #335437;
+    color: white;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+
+}
+.left h1{
+    font-size: 7rem;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           rem;
+    margin-bottom: 10px;
+}
+.left p{
+    font-size: 1.2rem;
+    margin: 0;
+}
+.right{
+    flex: 1;
+    display: flex;
+    padding: 15px;
+}
+.form {
+    width: 100%;
+    max-width: 94%;
+    display: flex;
+    flex-direction: column;
+}
+.form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+#inquiry {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%; height: 30vh;
+
+}
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+
+#name, #contact{
+    height: 5.5vh;
+}
+form span{
+    font-size: 2.3rem;
+    margin-bottom: 2.5%;
+    color: #597d48;
+}
+label{
+    font-size: 1.5rem;
+}
+input[type="text"]{
+    padding: 5px 10px 5px 10px;
+}
+.form button{
+    all: unset;
+    border: 1px solid black;
+    width: 80px; height: 30px; background-color:  #597d48;
+    border-radius: 60px;
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    color:white;
+    box-shadow: 2px 3px 5px #5c953d;
+}
+.form button:hover {
+    background-color: #3F662A;
+}
+.links{
+    position: relative;
+    top: 35.5%;
+}
+.links a{
+    color: #f3d5b3;
+}
