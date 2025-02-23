@@ -122,3 +122,17 @@ input[type="text"]{
 .links a{
     color: #f3d5b3;
 }
+@media only screen and (max-width: 1000px){
+    body{
+        overflow-x: hidden;
+    }
+    .body{
+        flex-direction: column;
+    }
+    .left h1{
+        font-size: 5rem;
+    }
+    .left, .right{
+        width: 100%;
+    }
+}
