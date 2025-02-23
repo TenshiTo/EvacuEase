@@ -66,19 +66,8 @@
                 
                 if (isMobile) {
                     // If it's a mobile device, show the warning message
-                    let warningMessage = document.createElement('div');
-                    warningMessage.style.position = 'fixed';
-                    warningMessage.style.top = '0';
-                    warningMessage.style.left = '0';
-                    warningMessage.style.width = '100%';
-                    warningMessage.style.backgroundColor = 'red';
-                    warningMessage.style.color = 'white';
-                    warningMessage.style.textAlign = 'center';
-                    warningMessage.style.padding = '10px';
-                    warningMessage.style.fontSize = '18px';
-                    warningMessage.innerText = 'This page cannot be accessed on mobile devices. Please use a desktop.';
-                    
-                    document.body.appendChild(warningMessage);
+                    alert("This page can't be accessed!");
+                    window.location.href = "index.html"
                 }
             }
         
